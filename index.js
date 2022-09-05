@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 const express = require('express')
 const app = express()
@@ -19,10 +18,6 @@ const port = 3002
 app.listen(port)
 console.log(`el servidor esta escuchando en http://localhost:${port}`)
 
+// const key = 'mongodb+srv://rafaelDiinpec:Mr178910@tc.kshjevt.mongodb.net/?retryWrites=true&w=majority'
 
-
-=======
-const key = 'mongodb+srv://rafaelDiinpec:Mr178910@tc.kshjevt.mongodb.net/?retryWrites=true&w=majority'
-
-module.exports = key
->>>>>>> 939fe49a41af64911c88d9914e673d50f8b85470
+// module.exports = key
