@@ -5,6 +5,10 @@ function addEnterprise(enterprise){
   return myEnterprise.save() 
 }
 
+// function addPassword(pass){
+//   const myEnterprise = new Model(pass)
+//   return myEnterprise.save() 
+// }
 function addPassword(pass){
   const myEnterprise = new Model(pass)
   return myEnterprise.save() 

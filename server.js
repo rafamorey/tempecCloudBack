@@ -16,7 +16,7 @@ router(app)
 app.use('/app', express.static('public/front'))
 
 const port = 3002
-app.listen(port)
+app.listen()
 console.log(`el servidor esta escuchando en el puerto http://localhost:${port}`)
 
 
