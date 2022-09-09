@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 router(app)
 
-app.use('/app', express.static('public/front'))
+app.use('/app', express.static('public'))
 
 // const port = 3002
 app.listen()
