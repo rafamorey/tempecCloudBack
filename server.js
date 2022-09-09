@@ -13,10 +13,10 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 router(app)
 
-app.use('/app', express.static('public/front'))
+app.use('/app', express.static('public'))
 
 const port = 3002
-app.listen()
+app.listen(port)
 console.log(`el servidor esta escuchando en el puerto http://localhost:${port}`)
 
 
