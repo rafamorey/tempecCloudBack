@@ -1,5 +1,6 @@
 
 const express = require('express')
+const path = require('path')
 const app = express()
 const bodyParser = require('body-parser')
 const db = require('./db')
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 router(app)
 
-app.use('/app', express.static(__dirname + './public'))
+app.use('/app', express.static(path.join(__dirname, 'public')))
 
 // const port = 3002
 app.listen()
