@@ -4,11 +4,11 @@ const Schema = mongoose.Schema
 
 const mySchema = new Schema({
   id: String,
-  name: String,
+  enterprise: String,
   password:String,
   email: String,
   phone: String,
-  idUsers:Array
+  users:Array
 })
 
 const model = mongoose.model('Enterprise', mySchema)
