@@ -2,15 +2,18 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const mySchema = new Schema({
-  id: String,
-  enterprise: String,
-  password:String,
+const mySchema = mongoose.Schema({
+  name: String,
+  password: String,
   email: String,
-  phone: String,
-  users:Array
+  phone: Number,
+  users:Array,
+  enterprise: String,
+  created: Date
 })
 
-const model = mongoose.model('Enterprise', mySchema)
+
+
+const model = mongoose.model('Enterprises', mySchema)
 
 module.exports = model
