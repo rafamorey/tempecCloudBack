@@ -7,24 +7,17 @@ function addEnterprise(req){
     return Promise.reject('invalid data')
   }
   const enterprise = {
+    "enterprise": req.body.enterprise,
     "name": req.body.name,
     "password": req.body.password,
     "email": req.body.email,
     "phone": req.body.phone,
+    "users": req.body.users,
     "idUsers": req.body.idUsers
   }
   return store.addEnterprise(enterprise)
 }
 
-// function addPassword(password){
-//   if(!password){
-//     return Promise.reject('invalid password')
-//   }
-//   const pass = {
-//     password
-//   }
-//   return store.addPassword(pass)
-// }
 
 function getEnterprise(){
   return new Promise((resolve, reject) => {
@@ -32,8 +25,25 @@ function getEnterprise(){
   })
 }
 
+function getEnterpriseById(req){
+  const enterprise = {
+    "name": req.body.name,
+    "password": req.body.password
+  }
+  return new Promise((resolve, reject) => {
+    resolve(store.getEnterpriseById(enterprise))
+  })
+}
+
+function deleteEnterprise(){
+  return new Promise((resolve, reject) => {
+    resolve(store.deleteEnterprise())
+  })
+}
+
 module.exports = {
   addEnterprise,
-  // addPassword,
-  getEnterprise
+  deleteEnterprise,
+  getEnterprise,
+  getEnterpriseById
 }

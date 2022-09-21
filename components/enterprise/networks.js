@@ -13,6 +13,16 @@ router.get('/', (req,res) => {
   })
 })
 
+router.get('/id', (req,res) => {
+  controller.getEnterpriseById(req,res)
+  .then((enterprise) =>{
+    response.success(req, res, enterprise, 200)
+  })
+  .catch(err => {
+    response.error(req,res, 'internal error', 500, err)
+  })
+})
+
 router.post('/', (req,res) =>{
   controller.addEnterprise(req)
     .then(data => {
@@ -23,5 +33,14 @@ router.post('/', (req,res) =>{
     })
 })
 
+router.delete('/', (req,res) =>{
+  controller.deleteEnterprise(req)
+    .then(data => {
+      response.success(req,res,data,201)
+    })
+    .catch(err => {
+      response.error(req,res, 'internal error', 500, err)
+    })
+})
 
 module.exports = router
