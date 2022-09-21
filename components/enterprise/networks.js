@@ -14,7 +14,7 @@ router.get('/', (req,res) => {
 })
 
 // getting enterprise(id)
-router.get('/id', (req,res) => {
+router.post('/id', (req,res) => {
   controller.getEnterpriseById(req,res)
   .then((enterprise) =>{
     response.success(req, res, enterprise, 200)
