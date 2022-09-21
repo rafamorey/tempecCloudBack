@@ -13,6 +13,7 @@ router.get('/', (req,res) => {
   })
 })
 
+// getting enterprise(id)
 router.get('/id', (req,res) => {
   controller.getEnterpriseById(req,res)
   .then((enterprise) =>{
@@ -42,5 +43,6 @@ router.delete('/', (req,res) =>{
       response.error(req,res, 'internal error', 500, err)
     })
 })
+
 
 module.exports = router
