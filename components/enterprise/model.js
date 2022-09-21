@@ -29,9 +29,9 @@ var mySchema = new Schema({
           hisL: Number,
           tempMax: Number,
           tempMin: Number,
-          dateMax: Date,
-          dateMin: Date,
-          date: Date
+          dateMax: String,
+          dateMin: String,
+          date: {type: Date, default: Date.now}
         }
       ]
     }
