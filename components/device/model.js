@@ -5,16 +5,20 @@ const Schema = mongoose.Schema
 const mySchema = Schema({
   id: String,
   name: String,
-  setPoint: Number,
-  tempItn: Number,
+  setPoint: Number, //tempIdeal
+  tempItn: Number, //tempActual
   tempExt: Number,
   out_0: Boolean,
   out_1: Boolean,
-  histH: Number,
-  histL: Number,
-  tempMax: Number,
-  tempMin: Number,
+  histH: Number, //maxIdeal
+  histL: Number, //minIdeal
+  tempMax: Number, //maxActual
+  tempMin: Number, //minActual
   dateMax: Date,
   dateMin: Date,
   date: Date
 })
+
+const model = mongoose.model('Device', mySchema)
+
+module.exports = model

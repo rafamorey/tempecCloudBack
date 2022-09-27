@@ -1,11 +1,13 @@
 const express = require('express')
 
 const enterprise = require('../components/enterprise/networks')
+const device = require('../components/device/networks')
+const user = require('../components/user/networks')
 
 const routes = function(server){
   server.use('/enterprise', enterprise)
-  // server.use('/user', enterprise)
-  // server.use('/device', enterprise)
+  server.use('/user', user)
+  server.use('/device', device)
 }
 
 module.exports = routes
