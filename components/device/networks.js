@@ -3,18 +3,19 @@ const router = express.Router()
 const response = require('../../network/response')
 const controller = require('./controller')
 
-// router.get('/', (req,res) => {
-//   controller.getEnterprise()
-//   .then((enterprises) =>{
-//     response.success(req, res, enterprises, 200)
-//   })
-//   .catch(err => {
-//     response.error(req,res, 'internal error', 500, err)
-//   })
-// })
+router.get('/', (req,res) => {
+  controller.getDevices()
+  .then((devices) =>{
+    response.success(req, res, devices, 200)
+  })
+  .catch(err => {
+    response.error(req,res, 'internal error', 500, err)
+  })
+})
 
 // getting device(id)
 router.post('/id', (req,res) => {
+  console.log(req)
   controller.getDeviceById(req,res)
   .then((device) =>{
     response.success(req, res, device, 200)

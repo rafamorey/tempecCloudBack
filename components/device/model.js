@@ -19,6 +19,6 @@ const mySchema = Schema({
   date: Date
 })
 
-const model = mongoose.model('Device', mySchema)
+const model = mongoose.model('devices', mySchema)
 
 module.exports = model
