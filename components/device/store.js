@@ -20,9 +20,9 @@ async function getDeviceStatusById(device){
   return statusbyid
 }
 
-async function deleteDevice(){
-  const devices = await Model.remove()
-  return devices
+async function deleteDevice(device){
+  const deviceDeleted = await Model.findOneAndDelete(device)
+  return deviceDeleted
 }
 
 module.exports = {
