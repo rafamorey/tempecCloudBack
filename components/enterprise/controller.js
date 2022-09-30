@@ -18,13 +18,15 @@ function addEnterprise(req){
 }
 
 function addEnterpriseDevice(req){
+  console.log("controller")
   if(!req.body){
     return Promise.reject('invalid data')
   }
   const enterpriseDevice = {
     "name": req.body.name,
-    "id": req.body.id,
+    "devices": req.body.devices
   }
+  console.log(enterpriseDevice)
   return store.addEnterpriseDevice(enterpriseDevice)
 }
 

@@ -6,10 +6,14 @@ function addEnterprise(enterprise){
 }
 
 async function addEnterpriseDevice(enterpriseDevice){
+  console.log("store")
+  console.log(enterpriseDevice)
   const myEnterpriseDevice = await Model.updateOne(
-    {enterprise: enterpriseDevice.name},
-    {$addToSet: {"devices": enterpriseDevice.id}}
+    {name: enterpriseDevice.name},
+    {$addToSet: {devices:enterpriseDevice.devices}
+     }
   )
+  console.log(myEnterpriseDevice)
   return myEnterpriseDevice
 }
 

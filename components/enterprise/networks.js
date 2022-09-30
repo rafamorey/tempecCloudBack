@@ -38,6 +38,7 @@ router.post('/', (req,res) =>{
 
 // create devicebyId enterprise
 router.post('/deviceid', (req,res) =>{
+  console.log("network")
   controller.addEnterpriseDevice(req)
     .then(data => {
       response.success(req,res,data,201)
