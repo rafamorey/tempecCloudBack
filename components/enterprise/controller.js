@@ -23,9 +23,9 @@ function addEnterpriseDevice(req){
   }
   const enterpriseDevice = {
     "name": req.body.name,
-    "password": req.body.id,
+    "id": req.body.id,
   }
-  return store.addEnterprise(enterpriseDevice)
+  return store.addEnterpriseDevice(enterpriseDevice)
 }
 
 
