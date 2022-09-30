@@ -41,10 +41,14 @@ function deleteEnterprise(){
 }
 
 function deleteDeviceid(req){
-  const deviceToDelete = {
-    "id": req.body.id
-  }
-  return new Promise((resolve, reject) => {
+  const deviceToDelete = 
+  // {
+      // "devices":[
+        {"id": req.body.id}
+      // ]
+    // }
+  
+    return new Promise((resolve, reject) => {
     resolve(store.deleteDeviceId(deviceToDelete))
   })
 }

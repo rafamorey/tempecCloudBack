@@ -15,6 +15,7 @@ router.get('/', (req,res) => {
 
 // getting enterprise(id)
 router.post('/id', (req,res) => {
+  console.log(req)
   controller.getEnterpriseById(req,res)
   .then((enterprise) =>{
     response.success(req, res, enterprise, 200)

@@ -21,7 +21,11 @@ async function deleteEnterprise(){
 }
 
 async function deleteDeviceId(device){
-  const enterprises = await Model.remove({"devices.id":device})
+  console.log(device)
+  const enterprises = await Model.updateOne(
+    {enterprise: "Rys"},
+    {$pull: {"devices": device}}
+  )
   return enterprises
 }
 
