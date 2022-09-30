@@ -17,6 +17,18 @@ function addEnterprise(req){
   return store.addEnterprise(enterprise)
 }
 
+function addEnterpriseDevice(req){
+  if(!req.body){
+    return Promise.reject('invalid data')
+  }
+  const enterpriseDevice = {
+    "name": req.body.name,
+    "password": req.body.id,
+  }
+  return store.addEnterprise(enterpriseDevice)
+}
+
+
 
 function getEnterprise(){
   return new Promise((resolve, reject) => {
@@ -42,18 +54,14 @@ function deleteEnterprise(){
 
 function deleteDeviceid(req){
   const deviceToDelete = 
-  // {
-      // "devices":[
         {"id": req.body.id}
-      // ]
-    // }
-  
     return new Promise((resolve, reject) => {
     resolve(store.deleteDeviceId(deviceToDelete))
   })
 }
 module.exports = {
   addEnterprise,
+  addEnterpriseDevice,
   deleteEnterprise,
   getEnterprise,
   getEnterpriseById,

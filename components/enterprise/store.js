@@ -5,6 +5,15 @@ function addEnterprise(enterprise){
   return myEnterprise.save() 
 }
 
+async function addEnterpriseDevice(enterpriseDevice){
+  const myEnterpriseDevice = await Model.updateOne(
+    {enterprise: enterpriseDevice.name},
+    {$addToSet: {"devices": myEnterpriseDevice.id}}
+  )
+  return enterprises
+}
+
+
 async function getEnterprise(){
   const enterprises = await Model.find()
   return enterprises
@@ -21,16 +30,16 @@ async function deleteEnterprise(){
 }
 
 async function deleteDeviceId(device){
-  console.log(device)
   const enterprises = await Model.updateOne(
-    {enterprise: "Rys"},
-    {$pull: {"devices": device}}
+    {enterprise: device.name},
+    {$pull: {"devices": device.id}}
   )
   return enterprises
 }
 
 module.exports = {
   addEnterprise,
+  addEnterpriseDevice,
   deleteEnterprise,
   getEnterprise,
   getEnterpriseById,
