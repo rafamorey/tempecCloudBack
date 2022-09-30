@@ -24,6 +24,7 @@ router.post('/id', (req,res) => {
   })
 })
 
+// create enterprise
 router.post('/', (req,res) =>{
   controller.addEnterprise(req)
     .then(data => {
@@ -36,6 +37,16 @@ router.post('/', (req,res) =>{
 
 router.delete('/', (req,res) =>{
   controller.deleteEnterprise(req)
+    .then(data => {
+      response.success(req,res,data,201)
+    })
+    .catch(err => {
+      response.error(req,res, 'internal error', 500, err)
+    })
+})
+
+router.delete('/deviceid', (req,res) =>{
+  controller.deleteDeviceid(req)
     .then(data => {
       response.success(req,res,data,201)
     })

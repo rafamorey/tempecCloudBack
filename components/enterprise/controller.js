@@ -40,9 +40,18 @@ function deleteEnterprise(){
   })
 }
 
+function deleteDeviceid(req){
+  const deviceToDelete = {
+    "id": req.body.id
+  }
+  return new Promise((resolve, reject) => {
+    resolve(store.deleteDeviceId(deviceToDelete))
+  })
+}
 module.exports = {
   addEnterprise,
   deleteEnterprise,
   getEnterprise,
-  getEnterpriseById
+  getEnterpriseById,
+  deleteDeviceid
 }

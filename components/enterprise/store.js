@@ -20,9 +20,15 @@ async function deleteEnterprise(){
   return enterprises
 }
 
+async function deleteDeviceId(device){
+  const enterprises = await Model.remove({"devices.id":device})
+  return enterprises
+}
+
 module.exports = {
   addEnterprise,
   deleteEnterprise,
   getEnterprise,
-  getEnterpriseById
+  getEnterpriseById,
+  deleteDeviceId
 }
