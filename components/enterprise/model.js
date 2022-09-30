@@ -9,14 +9,7 @@ var mySchema = new Schema({
   email: String,
   phone: Number,
   date: {type: Date, default: Date.now},
-  users: [
-    {
-      id: String,
-      name: String,
-      password: String,
-      phone: Number,
-      email: String,
-      device: [
+  devices: [
         {
           id: String,
           name: String,
@@ -34,8 +27,6 @@ var mySchema = new Schema({
           date: {type: Date, default: Date.now}
         }
       ]
-    }
-  ]
 })
 
 

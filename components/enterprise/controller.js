@@ -12,7 +12,7 @@ function addEnterprise(req){
     "password": req.body.password,
     "email": req.body.email,
     "phone": req.body.phone,
-    "users": req.body.users
+    "devices": req.body.devices
   }
   return store.addEnterprise(enterprise)
 }
