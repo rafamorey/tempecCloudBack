@@ -8,9 +8,9 @@ function addEnterprise(enterprise){
 async function addEnterpriseDevice(enterpriseDevice){
   const myEnterpriseDevice = await Model.updateOne(
     {enterprise: enterpriseDevice.name},
-    {$addToSet: {"devices": myEnterpriseDevice.id}}
+    {$addToSet: {"devices": enterpriseDevice.id}}
   )
-  return enterprises
+  return myEnterpriseDevice
 }
 
 
