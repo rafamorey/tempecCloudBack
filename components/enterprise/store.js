@@ -14,7 +14,7 @@ async function addEnterpriseDevice(enterpriseDevice){
      }
   )
   console.log(myEnterpriseDevice)
-  return myEnterpriseDevice
+  return enterpriseDevice
 }
 
 
