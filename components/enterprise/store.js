@@ -13,7 +13,7 @@ async function addEnterpriseDevice(enterpriseDevice){
     {$addToSet: {devices:enterpriseDevice.devices}
      }
   )
-  console.log(myEnterpriseDevice)
+  
   return enterpriseDevice
 }
 
@@ -34,9 +34,12 @@ async function deleteEnterprise(){
 }
 
 async function deleteDeviceId(device){
+  console.log("store")
+  console.log(device)
+  console.log(device.id)
   const enterprises = await Model.updateOne(
-    {enterprise: device.name},
-    {$pull: {"devices": device.id}}
+    {name: device.name},
+    {$pull: {devices: {id: device.id}}}
   )
   return enterprises
 }

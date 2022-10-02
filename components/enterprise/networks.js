@@ -59,6 +59,7 @@ router.delete('/', (req,res) =>{
 })
 
 router.delete('/deviceid', (req,res) =>{
+  console.log("network")
   controller.deleteDeviceid(req)
     .then(data => {
       response.success(req,res,data,201)

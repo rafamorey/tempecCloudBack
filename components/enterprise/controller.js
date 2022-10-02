@@ -55,8 +55,12 @@ function deleteEnterprise(){
 }
 
 function deleteDeviceid(req){
+  console.log("controller")
   const deviceToDelete = 
-        {"id": req.body.id}
+        {
+          "name":req.body.name,
+          "id": req.body.id
+        }
     return new Promise((resolve, reject) => {
     resolve(store.deleteDeviceId(deviceToDelete))
   })
