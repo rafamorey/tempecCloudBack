@@ -14,7 +14,7 @@ const mySchema = Schema({
   tempMin: Number, //minActual
   dateMax: Date,
   dateMin: Date,
-  date: Date.now
+  date: {type:Date, default:Date.now}
 })
 
 const model = mongoose.model('devices', mySchema)
