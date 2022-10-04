@@ -52,9 +52,16 @@ function deleteDevice(req){
   })
 }
 
+function deleteAll(req){
+  return new Promise((resolve, reject) => {
+    resolve(store.deleteAll())
+  })
+}
+
 module.exports = {
   addDevice,
   deleteDevice,
+  deleteAll,
   getDevices,
   getDeviceById,
   getDeviceStatusById

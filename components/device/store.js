@@ -25,9 +25,15 @@ async function deleteDevice(device){
   return deviceDeleted
 }
 
+async function deleteAll(){
+  const deviceDeleted = await Model.remove()
+  return deviceDeleted
+}
+
 module.exports = {
   addDevice,
   deleteDevice,
+  deleteAll,
   getDevices,
   getDeviceById,
   getDeviceStatusById

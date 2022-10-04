@@ -58,5 +58,15 @@ router.delete('/id', (req,res) =>{
     })
 })
 
+router.delete('/', (req,res) =>{
+  controller.deleteAll(req)
+    .then(data => {
+      response.success(req,res,data,201)
+    })
+    .catch(err => {
+      response.error(req,res, 'internal error', 500, err)
+    })
+})
+
 
 module.exports = router
