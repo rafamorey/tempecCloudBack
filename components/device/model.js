@@ -8,15 +8,13 @@ const mySchema = Schema({
   setPoint: Number, //tempIdeal
   tempInt: Number, //tempActual
   tempExt: Number,
-  out_0: Boolean,
-  out_1: Boolean,
   histH: Number, //maxIdeal
   histL: Number, //minIdeal
   tempMax: Number, //maxActual
   tempMin: Number, //minActual
   dateMax: Date,
   dateMin: Date,
-  date: Date
+  date: Date.now
 })
 
 const model = mongoose.model('devices', mySchema)
