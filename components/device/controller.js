@@ -8,7 +8,10 @@ function addDevice(req){
   const device = {
     "name": req.body.name,
     "id": req.body.id,
-    "setPoint": req.body.setPoint
+    "setPoint": req.body.setPoint,
+    "tempInt": req.body.tempInt,
+    "tempMax": req.body.tempMax,
+    "tempMin": req.body.tempMin
   }
   return store.addDevice(device)
 }
