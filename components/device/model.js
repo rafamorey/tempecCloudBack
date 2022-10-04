@@ -6,7 +6,7 @@ const mySchema = Schema({
   id: String,
   name: String,
   setPoint: Number, //tempIdeal
-  tempItn: Number, //tempActual
+  tempInt: Number, //tempActual
   tempExt: Number,
   out_0: Boolean,
   out_1: Boolean,
