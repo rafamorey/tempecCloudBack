@@ -5,9 +5,22 @@ function addDevice(device){
   return myDevice.save() 
 }
 
-async function getDevices(){
-  const devices = await Model.find()
-  return devices
+// getting devices for user
+async function getDevices(deviceUser){
+  const temperatures = []
+  const tempDates = []
+  const devices = await Model.find(
+    { name: deviceUser.name, 
+      id: deviceUser.id
+    }
+    )
+    devices.forEach(device => {
+      temperatures.push(device.tempInt)
+      tempDates.push(device.date)
+    });
+    // console.log(temperatures)
+    // console.log(tempDates)       
+  return {temperatures, tempDates}
 }
 
 async function getDeviceById(device){

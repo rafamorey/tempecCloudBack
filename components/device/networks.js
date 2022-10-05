@@ -3,8 +3,9 @@ const router = express.Router()
 const response = require('../../network/response')
 const controller = require('./controller')
 
-router.get('/', (req,res) => {
-  controller.getDevices()
+// get devices for one user
+router.post('/', (req,res) => {
+  controller.getDevices(req)
   .then((devices) =>{
     response.success(req, res, devices, 200)
   })
