@@ -38,15 +38,15 @@ router.post('/status', (req,res) => {
 })
 
 // creating device
-router.post('/', (req,res) =>{
-  controller.addDevice(req)
-    .then(data => {
-      response.success(req,res,data,201)
-    })
-    .catch(err => {
-      response.error(req,res, 'internal error', 500, err)
-    })
-})
+// router.post('/', (req,res) =>{
+//   controller.addDevice(req)
+//     .then(data => {
+//       response.success(req,res,data,201)
+//     })
+//     .catch(err => {
+//       response.error(req,res, 'internal error', 500, err)
+//     })
+// })
 
 // deleting Device(id)
 router.delete('/id', (req,res) =>{
