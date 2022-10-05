@@ -21,7 +21,7 @@ function getDevices(req){
 const deviceUser = {
   "name": req.body.name,
   "id": req.body.id,
-  "enterprise": req.body.enterprise
+  // "enterprise": req.body.enterprise
 }
   return new Promise((resolve, reject) => {
     resolve(store.getDevices(deviceUser))
