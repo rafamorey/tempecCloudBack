@@ -16,10 +16,15 @@ function addDevice(req){
   return store.addDevice(device)
 }
 
-
-function getDevices(){
+// getting devices for user
+function getDevices(req){
+const deviceUser = {
+  "name": req.body.name,
+  "id": req.body.id,
+  // "enterprise": req.body.enterprise
+}
   return new Promise((resolve, reject) => {
-    resolve(store.getDevices())
+    resolve(store.getDevices(deviceUser))
   })
 }
 
