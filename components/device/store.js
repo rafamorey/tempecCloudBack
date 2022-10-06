@@ -11,7 +11,7 @@ async function getDevices(){
 }
 
 async function getDeviceById(device){
-  const devicebyid = await Model.findOne(device)
+  const devicebyid = await Model.find(device)
   return devicebyid
 }
 
