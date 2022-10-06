@@ -20,7 +20,7 @@ async function getDevices(deviceUser){
     });
     // console.log(temperatures)
     // console.log(tempDates)       
-  return {temperatures, tempDates}
+  return temperatures
 }
 
 async function getDeviceById(device){
