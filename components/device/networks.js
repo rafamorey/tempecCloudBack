@@ -4,7 +4,7 @@ const response = require('../../network/response')
 const controller = require('./controller')
 
 // get devices for one user
-router.post('/', (req,res) => {
+router.post('/deviceValues', (req,res) => {
   controller.getDevices(req)
   .then((devices) =>{
     response.success(req, res, devices, 200)
