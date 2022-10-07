@@ -9,6 +9,8 @@ function addDevice(device){
 async function getDevices(deviceUser){
   const temperatures = []
   const tempDates = []
+  const tempMin = []
+  const tempMax = []
   const devices = await Model.find(
     { name: deviceUser.name, 
       id: deviceUser.id
@@ -17,10 +19,12 @@ async function getDevices(deviceUser){
     devices.forEach(device => {
       temperatures.push(device.tempInt)
       tempDates.push(device.date)
+      tempMin.push(device.tempMin)
+      tempMax.push(device.tempMax)
     });
     // console.log(temperatures)
     // console.log(tempDates)       
-  return {temperatures, tempDates}
+  return {temperatures, tempDates, tempMin, tempMax}
 }
 
 async function getDeviceById(device){
