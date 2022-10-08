@@ -25,7 +25,7 @@ async function getEnterprise(){
 
 async function getEnterpriseById(enterprise){
   const enterprisebyid = await Model.findOne(enterprise)
-  return enterprisebyid
+    return enterprisebyid
 }
 
 async function deleteEnterprise(){
