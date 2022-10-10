@@ -51,7 +51,6 @@ function getDeviceStatusById(req){
 
 function deleteDevice(req){
   const device = {
-    "name": req.body.name,
     "id": req.body.id,
     "enterprise": req.body.enterprise
   }
