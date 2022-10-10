@@ -6,6 +6,7 @@ function addDevice(req){
     return Promise.reject('invalid data')
   }
   const device = {
+    "enterprise": req.body.enterprise,
     "name": req.body.name,
     "id": req.body.id,
     "setPoint": req.body.setPoint,

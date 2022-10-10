@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const mySchema = Schema({
+  enterprise: String,
   id: String,
   name: String,
   setPoint: Number, //tempIdeal
