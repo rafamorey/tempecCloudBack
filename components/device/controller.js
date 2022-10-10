@@ -18,7 +18,7 @@ function addDevice(req){
 }
 
 // getting devices for user
-function getDevices(req){
+function getDeviceValues(req){
 const deviceUser = {
   "name": req.body.name,
   "id": req.body.id,
@@ -69,7 +69,7 @@ module.exports = {
   addDevice,
   deleteDevice,
   deleteAll,
-  getDevices,
+  getDeviceValues,
   getDeviceById,
   getDeviceStatusById
 }

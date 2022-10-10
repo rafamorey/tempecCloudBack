@@ -6,7 +6,7 @@ function addDevice(device){
 }
 
 // getting devices for user
-async function getDevices(deviceUser){
+async function getDeviceValues(deviceUser){
   const temperatures = []
   const tempDates = []
   const tempMin = []
@@ -51,7 +51,7 @@ module.exports = {
   addDevice,
   deleteDevice,
   deleteAll,
-  getDevices,
+  getDeviceValues,
   getDeviceById,
   getDeviceStatusById
 }
