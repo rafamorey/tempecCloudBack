@@ -23,6 +23,7 @@ function addEnterpriseDevice(req){
     return Promise.reject('invalid data')
   }
   const enterpriseDevice = {
+    "enterprise": req.body.enterprise,
     "name": req.body.name,
     "devices": req.body.devices
   }
