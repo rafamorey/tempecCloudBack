@@ -25,7 +25,7 @@ const deviceUser = {
   // "enterprise": req.body.enterprise
 }
   return new Promise((resolve, reject) => {
-    resolve(store.getDevices(deviceUser))
+    resolve(store.getDeviceValues(deviceUser))
   })
 }
 
