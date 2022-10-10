@@ -11,8 +11,8 @@ var mySchema = new Schema({
   date: {type: Date, default: Date.now},
   devices: [
         {
-          enterprise: String,
           id: String,
+          enterprise: String,
           name: String,
           setPoint: Number,
           tempInt: Number,

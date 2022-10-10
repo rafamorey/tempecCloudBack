@@ -2,7 +2,7 @@
 const store = require('./store')
 
 function addEnterprise(req){
-  // console.log(req.body)
+  console.log(req.body)
   if(!req.body){
     return Promise.reject('invalid data')
   }
@@ -24,7 +24,6 @@ function addEnterpriseDevice(req){
   }
   const enterpriseDevice = {
     "enterprise": req.body.enterprise,
-    "name": req.body.name,
     "devices": req.body.devices
   }
   console.log(enterpriseDevice)

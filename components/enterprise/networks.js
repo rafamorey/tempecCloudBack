@@ -27,6 +27,7 @@ router.post('/id', (req,res) => {
 
 // create enterprise
 router.post('/', (req,res) =>{
+  console.log('net')
   controller.addEnterprise(req)
     .then(data => {
       response.success(req,res,data,201)

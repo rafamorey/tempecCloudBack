@@ -1,7 +1,9 @@
 const Model = require('./model');
 
 function addEnterprise(enterprise){
+  console.log('store')
   const myEnterprise = new Model(enterprise)
+  console.log(myEnterprise)
   return myEnterprise.save() 
 }
 
