@@ -57,7 +57,7 @@ async function getDates(dates){
   const tempDates = []
   const tempMin = []
   const tempMax = []
-  devices.forEach(device => {
+  deviceDates.forEach(device => {
     temperatures.push(device.tempInt)
     tempDates.push(device.date)
     tempMin.push(device.tempMin)
