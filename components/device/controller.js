@@ -67,6 +67,8 @@ function deleteAll(req){
 
 function getDates(req){
   const dates = {
+    "name":req.body.name,
+    "id":req.body.id,
     "enterprise": req.body.enterprise,
     "start": req.body.startDate,
     "end":req.body.endDate
