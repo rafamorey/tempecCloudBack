@@ -51,7 +51,7 @@ async function getDates(dates){
   const start = new Date(dates.start)
   const end = new Date(dates.end)
   const deviceDates = await Model.find(
-    {enterprise: dates.enterprise, date: {$gte: start, $lte: end }}
+    {enterprise: dates.enterprise, name:dates.name, id: dates.id,date: {$gte: start, $lte: end }}
   )
   return deviceDates
 }
