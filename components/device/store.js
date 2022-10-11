@@ -53,7 +53,17 @@ async function getDates(dates){
   const deviceDates = await Model.find(
     {enterprise: dates.enterprise, name:dates.name, id: dates.id,date: {$gte: start, $lte: end }}
   )
-  return deviceDates
+  const temperatures = []
+  const tempDates = []
+  const tempMin = []
+  const tempMax = []
+  devices.forEach(device => {
+    temperatures.push(device.tempInt)
+    tempDates.push(device.date)
+    tempMin.push(device.tempMin)
+    tempMax.push(device.tempMax)
+  })
+  return {temperatures, tempDates, tempMin, tempMax}
 }
 
 module.exports = {
