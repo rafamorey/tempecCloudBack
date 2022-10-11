@@ -47,11 +47,21 @@ async function deleteAll(){
   return deviceDeleted
 }
 
+async function getDates(dates){
+  const start = new Date(dates.start)
+  const end = new Date(dates.end)
+  const deviceDates = await Model.find(
+    {enterprise: dates.enterprise, date: {$gte: start, $lte: end }}
+  )
+  return deviceDates
+}
+
 module.exports = {
   addDevice,
   deleteDevice,
   deleteAll,
   getDeviceValues,
   getDeviceById,
-  getDeviceStatusById
+  getDeviceStatusById,
+  getDates
 }

@@ -25,7 +25,7 @@ var mySchema = new Schema({
           tempMin: Number,
           dateMax: String,
           dateMin: String,
-          date: {type: Date, default: Date.now}
+          date: {type: Date, default: new Date()}
         }
       ]
 })

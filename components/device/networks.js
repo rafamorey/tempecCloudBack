@@ -69,5 +69,15 @@ router.delete('/', (req,res) =>{
     })
 })
 
+router.post('/dates', (req,res) =>{
+  controller.getDates(req)
+  .then(data => {
+    response.success(req, res, data,201)
+  })
+  .catch(err => {
+    response.error(req,res, 'internal error', 500, err)
+  })
+})
+
 
 module.exports = router

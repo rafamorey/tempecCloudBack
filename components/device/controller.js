@@ -65,11 +65,24 @@ function deleteAll(req){
   })
 }
 
+function getDates(req){
+  const dates = {
+    "enterprise": req.body.enterprise,
+    "start": req.body.startDate,
+    "end":req.body.endDate
+  }
+  console.log(dates)
+  return new Promise((resolve, reject) => {
+    resolve(store.getDates(dates))
+  })
+}
+
 module.exports = {
   addDevice,
   deleteDevice,
   deleteAll,
   getDeviceValues,
   getDeviceById,
-  getDeviceStatusById
+  getDeviceStatusById,
+  getDates
 }
