@@ -20,7 +20,7 @@ var mySchema = new Schema({
           out_0: Boolean,
           out_1: Boolean,
           histH: Number,
-          hisL: Number,
+          histL: Number,
           tempMax: Number,
           tempMin: Number,
           dateMax: String,
