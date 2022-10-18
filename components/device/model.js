@@ -15,7 +15,18 @@ const mySchema = Schema({
   tempMin: Number, //minActual
   dateMax: Date,
   dateMin: Date,
-  date: {type:Date, default:Date.now}
+  date: {type:Date, default:Date.now},
+  grados: String,
+  online: Boolean,
+  alarmaH: Number,
+  alarmaL: Number,
+  last_name: String,
+  last_setpoint: Number,
+  last_hisH: Number,
+  last_histL: Number,
+  last_alarmaH: Number,
+  last_alarmaL: Number,
+  last_grados: String 
 })
 
 const model = mongoose.model('devices', mySchema)
