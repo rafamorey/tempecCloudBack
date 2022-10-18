@@ -25,7 +25,18 @@ var mySchema = new Schema({
           tempMin: Number,
           dateMax: String,
           dateMin: String,
-          date: {type: Date, default: new Date()}
+          date: {type: Date, default: new Date()},
+          grados: String,
+          online: Boolean,
+          alarmaH: Number,
+          alarmaL: Number,
+          last_name: String,
+          last_setpoint: Number,
+          last_hisH: Number,
+          last_histL: Number,
+          last_alarmaH: Number,
+          last_alarmaL: Number,
+          last_grados: String 
         }
       ]
 })

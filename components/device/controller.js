@@ -13,17 +13,7 @@ function addDevice(req){
     "tempInt": req.body.tempInt,
     "tempMax": req.body.tempMax,
     "tempMin": req.body.tempMin,
-    "grados": "C",
-    "alarmaH": 1.2,
-    "alarmaL": 1.2,
-    "online": true,
-    "last_setpoint": 16,
-    "last_hisH": 1,
-    "last_histL": 1,
-    "last_alarmaH": 1.2,
-    "last_alarmaL": 1.2,
-    "last_name": "xrc1",
-    "last_grados": "C"
+    
   }
   return store.addDevice(device)
 }
