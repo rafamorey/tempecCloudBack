@@ -19,8 +19,8 @@ async function getDeviceValues(deviceUser){
     devices.forEach(device => {
       temperatures.push(device.tempInt)
       tempDates.push(device.date)
-      tempMin.push(device.tempMin)
-      tempMax.push(device.tempMax)
+      tempMin.push(device.histL)
+      tempMax.push(device.histH)
     });
     // console.log(temperatures)
     // console.log(tempDates)       
@@ -51,19 +51,9 @@ async function getDates(dates){
   const start = new Date(dates.start)
   const end = new Date(dates.end)
   const deviceDates = await Model.find(
-    {enterprise: dates.enterprise, name:dates.name, id: dates.id,date: {$gte: start, $lte: end }}
+    {enterprise: dates.enterprise, date: {$gte: start, $lte: end }}
   )
-  const temperatures = []
-  const tempDates = []
-  const tempMin = []
-  const tempMax = []
-  deviceDates.forEach(device => {
-    temperatures.push(device.tempInt)
-    tempDates.push(device.date)
-    tempMin.push(device.tempMin)
-    tempMax.push(device.tempMax)
-  })
-  return {temperatures, tempDates, tempMin, tempMax}
+  return deviceDates
 }
 
 module.exports = {
