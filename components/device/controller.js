@@ -80,21 +80,21 @@ function getDates(req){
   })
 }
 
-function uptConfig(req){
-  const configurations = {
-    "enterprise": req.body.enterprise,
-    "id": req.body.id,
-    "setPoint": req.body.value,
-    "maxLimit": req.body.value,
-    "minLimit": req.body.value,
-    "name": req.body.value,
-    "histMax": req.body.value,
-    "histMin": req.body.value,
-  }
-  return new Promise((resolve, reject) =>{
-    resolve(store.uptConfig(configurations))
-  })
-}
+// function uptConfig(req){
+//   const configurations = {
+//     "enterprise": req.body.enterprise,
+//     "id": req.body.id,
+//     "setPoint": req.body.value,
+//     "maxLimit": req.body.value,
+//     "minLimit": req.body.value,
+//     "name": req.body.value,
+//     "histMax": req.body.value,
+//     "histMin": req.body.value,
+//   }
+//   return new Promise((resolve, reject) =>{
+//     resolve(store.uptConfig(configurations))
+//   })
+// }
 
 module.exports = {
   addDevice,
@@ -104,5 +104,5 @@ module.exports = {
   getDeviceById,
   getDeviceStatusById,
   getDates,
-  uptConfig
+  // uptConfig
 }
