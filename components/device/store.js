@@ -48,12 +48,25 @@ async function deleteAll(){
 }
 
 async function getDates(dates){
+  const temperatures = []
+  const tempDates = []
+  const tempMin = []
+  const tempMax = []
   const start = new Date(dates.start)
   const end = new Date(dates.end)
   const deviceDates = await Model.find(
     {enterprise: dates.enterprise, date: {$gte: start, $lte: end }}
   )
-  return deviceDates
+  deviceDates.forEach(device => {
+    temperatures.push(device.tempInt)
+    tempDates.push(device.date)
+    tempMin.push(device.histL)
+    tempMax.push(device.histH)
+  });
+  // console.log(temperatures)
+  // console.log(tempDates)       
+return {temperatures, tempDates, tempMin, tempMax}
+ 
 }
 
 module.exports = {
