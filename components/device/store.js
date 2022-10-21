@@ -50,9 +50,12 @@ async function deleteAll(){
 async function getDates(dates){
   const start = new Date(dates.start)
   const end = new Date(dates.end)
+  console.log("start end")
+  console.log(start, end)
   const deviceDates = await Model.find(
     {enterprise: dates.enterprise, date: {$gte: start, $lte: end }}
   )
+  console.log(deviceDates)
   return deviceDates
 }
 
