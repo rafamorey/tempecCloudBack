@@ -19,8 +19,8 @@ async function getDeviceValues(deviceUser){
     devices.forEach(device => {
       temperatures.push(device.tempInt)
       tempDates.push(device.date)
-      tempMin.push(device.histL)
-      tempMax.push(device.histH)
+      tempMin.push(device.setPoint-device.histL)
+      tempMax.push(device.setPoint+device.histH)
     });
     // console.log(temperatures)
     // console.log(tempDates)       
@@ -48,16 +48,40 @@ async function deleteAll(){
 }
 
 async function getDates(dates){
+  const temperatures = []
+  const tempDates = []
+  const tempMin = []
+  const tempMax = []
   const start = new Date(dates.start)
   const end = new Date(dates.end)
   console.log("start end")
   console.log(start, end)
   const deviceDates = await Model.find(
-    {enterprise: dates.enterprise, date: {$gte: start, $lte: end }}
+    {enterprise: dates.enterprise,name: dates.name, 
+      id: dates.id, date: {$gte: start, $lte: end }}
   )
+<<<<<<< HEAD
   console.log(deviceDates)
   return deviceDates
+=======
+  deviceDates.forEach(device => {
+    temperatures.push(device.tempInt)
+    tempDates.push(device.date)
+    tempMin.push(device.setPoint-device.histL)
+    tempMax.push(device.setPoint+device.histH)
+  });
+  // console.log(temperatures)
+  // console.log(tempDates)       
+return {temperatures, tempDates, tempMin, tempMax}
+ 
+>>>>>>> 76f5ad937dcc19469b1a845a3486ce15f42372db
 }
+
+// async function uptConfig(configurations){
+//   const deviceConfig = await Model.findOneAndUpdate(
+//     {enterprise: configurations.enterprise,  { setPoint: configurations.setPoint}}
+//   )
+// }
 
 module.exports = {
   addDevice,
