@@ -17,7 +17,7 @@ async function getDeviceValues(deviceUser){
     }
     )
     devices.forEach(device => {
-      temperatures.push(device.tempInt)
+      temperatures.push(device.tempInt.substring(5,16))
       tempDates.push(device.date)
       tempMin.push(device.setPoint-device.histL)
       tempMax.push(device.setPoint+device.histH)
