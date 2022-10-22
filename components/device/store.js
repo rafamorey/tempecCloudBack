@@ -20,7 +20,7 @@ async function getDeviceValues(deviceUser){
       const dateString = device.date.toString()
       const dateReduc = dateString.substring(4,10)+ " " + dateString.substring(16,21)
       temperatures.push(device.tempInt)
-      tempDates.push(dateString)
+      // tempDates.push(dateString)
       tempDates.push(dateReduc)
       tempMin.push(device.setPoint-device.histL)
       tempMax.push(device.setPoint+device.histH)
