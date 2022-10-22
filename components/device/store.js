@@ -17,8 +17,11 @@ async function getDeviceValues(deviceUser){
     }
     )
     devices.forEach(device => {
+      const dateString = device.date.toString()
+      const dateReduc = dateString.substring(4,10)+ " " + dateString.substring(16,21)
       temperatures.push(device.tempInt)
-      tempDates.push(device.date)
+      // tempDates.push(dateString)
+      tempDates.push(dateReduc)
       tempMin.push(device.setPoint-device.histL)
       tempMax.push(device.setPoint+device.histH)
     });
@@ -69,11 +72,14 @@ async function getDates(dates){
   // console.log(temperatures)
   // console.log(tempDates)       
 return {temperatures, tempDates, tempMin, tempMax}
+<<<<<<< HEAD
  
 }
 
 async function refreshMin(device){
   const refreshValue =  await Model.updateOne()
+=======
+>>>>>>> 8e1e3b73868fced977b89948d8020b9fd3939520
 }
 
 // async function uptConfig(configurations){
@@ -89,7 +95,12 @@ module.exports = {
   getDeviceValues,
   getDeviceById,
   getDeviceStatusById,
+<<<<<<< HEAD
   getDates,
   refreshMin,
   refreshMax
 }
+=======
+  getDates
+}
+>>>>>>> 8e1e3b73868fced977b89948d8020b9fd3939520
