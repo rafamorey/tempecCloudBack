@@ -72,14 +72,30 @@ async function getDates(dates){
   // console.log(temperatures)
   // console.log(tempDates)       
 return {temperatures, tempDates, tempMin, tempMax}
-<<<<<<< HEAD
- 
 }
 
-async function refreshMin(device){
-  const refreshValue =  await Model.updateOne()
-=======
->>>>>>> 8e1e3b73868fced977b89948d8020b9fd3939520
+async function refreshMin(refresh){
+  const refreshData = await Model.updateOne(
+    { enterprise: refresh.enterprise, 
+      name: refresh.name,
+      id: refresh.id,},
+      {tempMin: refresh.setPoint,
+      date:Date.now
+      }
+  )
+  return refreshData
+}
+
+async function refreshMax(refresh){
+  const refreshData = await Model.updateOne(
+    { enterprise: refresh.enterprise, 
+      name: refresh.name,
+      id: refresh.id,},
+      {tempMax: refresh.setPoint,
+      date:Date.now
+      }
+  )
+  return refreshData
 }
 
 // async function uptConfig(configurations){
@@ -95,12 +111,7 @@ module.exports = {
   getDeviceValues,
   getDeviceById,
   getDeviceStatusById,
-<<<<<<< HEAD
   getDates,
   refreshMin,
   refreshMax
 }
-=======
-  getDates
-}
->>>>>>> 8e1e3b73868fced977b89948d8020b9fd3939520
