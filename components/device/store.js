@@ -60,10 +60,6 @@ async function getDates(dates){
     {enterprise: dates.enterprise,name: dates.name, 
       id: dates.id, date: {$gte: start, $lte: end }}
   )
-<<<<<<< HEAD
-  console.log(deviceDates)
-  return deviceDates
-=======
   deviceDates.forEach(device => {
     temperatures.push(device.tempInt)
     tempDates.push(device.date)
@@ -74,7 +70,10 @@ async function getDates(dates){
   // console.log(tempDates)       
 return {temperatures, tempDates, tempMin, tempMax}
  
->>>>>>> 76f5ad937dcc19469b1a845a3486ce15f42372db
+}
+
+async function refreshMin(device){
+  const refreshValue =  await Model.updateOne()
 }
 
 // async function uptConfig(configurations){
@@ -90,5 +89,7 @@ module.exports = {
   getDeviceValues,
   getDeviceById,
   getDeviceStatusById,
-  getDates
+  getDates,
+  refreshMin,
+  refreshMax
 }

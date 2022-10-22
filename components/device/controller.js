@@ -79,6 +79,30 @@ function getDates(req){
   })
 }
 
+function refreshMin(req){
+  const refresh = {
+    "enterprise": req.body.enterprise,
+    "id": req.body.id,
+    "name": req.body.name,
+    "setPoint": req.body.setPoint
+  }
+  return new Promise((resolve, reject) =>{
+    resolve(store.refreshMin(refresh))
+  })
+}
+
+function refreshMax(req){
+  const refresh = {
+    "enterprise": req.body.enterprise,
+    "id": req.body.id,
+    "name": req.body.name,
+    "setPoint": req.body.setPoint
+  }
+  return new Promise((resolve, reject) =>{
+    resolve(store.refreshMax(refresh))
+  })
+}
+
 module.exports = {
   addDevice,
   deleteDevice,
@@ -86,5 +110,7 @@ module.exports = {
   getDeviceValues,
   getDeviceById,
   getDeviceStatusById,
-  getDates
+  getDates, 
+  refreshMin,
+  refreshMax,
 }
