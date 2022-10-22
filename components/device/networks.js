@@ -79,7 +79,7 @@ router.post('/dates', (req,res) =>{
   })
 })
 
-router.put('/refreshMin', (req, res) => {
+router.post('/refreshMin', (req, res) => {
   controller.refreshMin(req)
   .then(data => {
     response.success(req,res, data,201)
@@ -89,7 +89,7 @@ router.put('/refreshMin', (req, res) => {
   })
 })
 
-router.put('/refreshMax', (req, res) => {
+router.post('/refreshMax', (req, res) => {
   controller.refreshMax(req)
   .then(data => {
     response.success(req,res, data,201)
