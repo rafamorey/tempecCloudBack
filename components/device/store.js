@@ -18,7 +18,7 @@ async function getDeviceValues(deviceUser){
     )
     devices.forEach(device => {
       const dateString = device.date.toString()
-      const dateReduc = dateString.substring(4,9)+dateString.substring(16,21)
+      const dateReduc = dateString.substring(4,10)+ " " + dateString.substring(16,21)
       temperatures.push(device.tempInt)
       tempDates.push(dateString)
       tempDates.push(dateReduc)
