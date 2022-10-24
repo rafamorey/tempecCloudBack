@@ -75,14 +75,29 @@ return {temperatures, tempDates, tempMin, tempMax}
 }
 
 async function refreshMin(refresh){
+  console.log(refresh)
+  const dateToChange = new Date
+  const datestri = dateToChange.toISOString()
+  console.log(datestri)
+  // const dateString = dateToChange.toDateString()
+  // const timeString = dateToChange.toTimeString()
+  // console.log(dateString)
+  // console.log(timeString)
+  const cambio = await Model.findOne({
+    name: refresh.name,
+    id: refresh.id})
+    console.log(cambio)
   const refreshData = await Model.updateOne(
     { enterprise: refresh.enterprise, 
       name: refresh.name,
-      id: refresh.id,},
+      id: refresh.id,
+      // date: {$gte: }
+    },
       {tempMin: refresh.setPoint,
-      date:Date.now
+        date: new Date
       }
   )
+  console.log(refreshData)
   return refreshData
 }
 

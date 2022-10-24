@@ -86,6 +86,7 @@ function refreshMin(req){
     "name": req.body.name,
     "setPoint": req.body.setPoint
   }
+  // console.log(refresh)
   return new Promise((resolve, reject) =>{
     resolve(store.refreshMin(refresh))
   })
