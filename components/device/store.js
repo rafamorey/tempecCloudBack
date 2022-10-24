@@ -74,6 +74,21 @@ async function getDates(dates){
 return {temperatures, tempDates, tempMin, tempMax}
 }
 
+async function getLastDate(date){
+  const tempDates =[]
+  const lastD = await Model.find({
+    enterprise: date.enterprise,
+    name: date.name,
+    id: date.id
+  })
+
+  lastD.forEach(device =>{
+    tempDates.push(device.date)
+  })
+  const final = tempDates.slice(-1).pop()
+  return final
+}
+
 async function refreshMin(refresh){
   console.log(refresh)
   const dateToChange = new Date
@@ -127,6 +142,7 @@ module.exports = {
   getDeviceById,
   getDeviceStatusById,
   getDates,
+  getLastDate,
   refreshMin,
   refreshMax
 }

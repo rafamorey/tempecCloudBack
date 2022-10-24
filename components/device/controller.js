@@ -79,6 +79,17 @@ function getDates(req){
   })
 }
 
+function getLastDate(req){
+  const lastD = {
+    "enterprise": req.body.enterprise,
+    "id": req.body.id,
+    "name": req.body.name
+  }
+return new Promise((resolve,reject)=>{
+  resolve(store.getLastDate(lastD))
+})
+}
+
 function refreshMin(req){
   const refresh = {
     "enterprise": req.body.enterprise,
@@ -111,7 +122,8 @@ module.exports = {
   getDeviceValues,
   getDeviceById,
   getDeviceStatusById,
-  getDates, 
+  getDates,
+  getLastDate, 
   refreshMin,
   refreshMax,
 }

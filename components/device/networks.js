@@ -79,6 +79,16 @@ router.post('/dates', (req,res) =>{
   })
 })
 
+router.post('/lastDate',(req,res) => {
+  controller.getLastDate(req)
+  .then(data =>{
+    response.success(req,res,data,201)
+  })
+  .catch(err =>{
+    response.error(req,res,'internal Error', 500, err)
+  })
+})
+
 router.post('/refreshMin', (req, res) => {
   controller.refreshMin(req)
   .then(data => {
