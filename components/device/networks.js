@@ -89,7 +89,7 @@ router.post('/lastDate',(req,res) => {
   })
 })
 
-router.post('/refreshMin', (req, res) => {
+router.put('/refreshMin', (req, res) => {
   controller.refreshMin(req)
   .then(data => {
     response.success(req,res, data,201)
