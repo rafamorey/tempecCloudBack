@@ -86,30 +86,21 @@ async function getLastDate(date){
     tempDates.push(device.date)
   })
   const final = tempDates.slice(-1).pop()
-  return {final}
+  return 
 }
 
 async function refreshMin(refresh){
   console.log(refresh)
-  const dateToChange = new Date
-  const datestri = dateToChange.toISOString()
-  console.log(datestri)
-  // const dateString = dateToChange.toDateString()
-  // const timeString = dateToChange.toTimeString()
-  // console.log(dateString)
-  // console.log(timeString)
-  const cambio = await Model.findOne({
-    name: refresh.name,
-    id: refresh.id})
-    console.log(cambio)
+  // const dateMin = refresh.date.toISODate()
+  // console.log(dateMin)
   const refreshData = await Model.updateOne(
     { enterprise: refresh.enterprise, 
       name: refresh.name,
       id: refresh.id,
-      // date: {$gte: }
+      date: refresh.date
     },
       {tempMin: refresh.setPoint,
-        date: new Date
+        // date: new Date
       }
   )
   console.log(refreshData)

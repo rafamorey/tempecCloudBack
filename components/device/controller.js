@@ -95,7 +95,8 @@ function refreshMin(req){
     "enterprise": req.body.enterprise,
     "id": req.body.id,
     "name": req.body.name,
-    "setPoint": req.body.setPoint
+    "setPoint": req.body.setPoint,
+    "date": req.body.date
   }
   // console.log(refresh)
   return new Promise((resolve, reject) =>{
