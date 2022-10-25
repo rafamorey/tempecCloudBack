@@ -86,7 +86,7 @@ async function getLastDate(date){
     tempDates.push(device.date)
   })
   const final = tempDates.slice(-1).pop()
-  return final
+  return {final}
 }
 
 async function refreshMin(refresh){
