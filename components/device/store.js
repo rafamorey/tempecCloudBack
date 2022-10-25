@@ -108,14 +108,20 @@ async function refreshMin(refresh){
 }
 
 async function refreshMax(refresh){
+  console.log(refresh)
+  // const dateMin = refresh.date.toISODate()
+  // console.log(dateMin)
   const refreshData = await Model.updateOne(
     { enterprise: refresh.enterprise, 
       name: refresh.name,
-      id: refresh.id,},
+      id: refresh.id,
+      date: refresh.date
+    },
       {tempMax: refresh.setPoint,
-      date:Date.now
+        // date: new Date
       }
   )
+  console.log(refreshData)
   return refreshData
 }
 
