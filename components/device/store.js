@@ -65,7 +65,7 @@ async function getDates(dates){
   )
   deviceDates.forEach(device => {
     temperatures.push(device.tempInt)
-    tempDates.push(device.date)
+    tempDates.push(device.date.toLocalString())
     tempMin.push(device.setPoint-device.histL)
     tempMax.push(device.setPoint+device.histH)
   });
