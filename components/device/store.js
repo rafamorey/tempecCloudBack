@@ -64,7 +64,7 @@ async function getDates(dates){
       id: dates.id, date: {$gte: start, $lte: end }}
   )
   deviceDates.forEach(device => {
-    const dateString = device.date.toLocalString()
+    // const dateString = device.date.toLocalString()
     temperatures.push(device.tempInt)
     tempDates.push(dateString)
     tempMin.push(device.setPoint-device.histL)
