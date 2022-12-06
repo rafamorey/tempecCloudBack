@@ -87,7 +87,9 @@ async function getLastDate(date){
     tempDates.push(device.date)
   })
   // const final = tempDates.slice(-1).pop()
-  const final = tempDates.at(-1)
+  // const final = tempDates.at(-1)
+  const final = tempDates[0]
+  // console.log(tempDates[0])
   return final
 }
 
