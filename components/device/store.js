@@ -86,7 +86,8 @@ async function getLastDate(date){
   lastD.forEach(device =>{
     tempDates.push(device.date)
   })
-  const final = tempDates.slice(-1).pop()
+  // const final = tempDates.slice(-1).pop()
+  const final = tempDates.at(-1)
   return final
 }
 
