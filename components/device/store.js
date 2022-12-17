@@ -70,6 +70,7 @@ async function getDates(dates){
     tempMin.push(device.setPoint-device.histL)
     tempMax.push(device.setPoint+device.histH)
   });
+  
   // console.log(temperatures)
   // console.log(tempDates)       
 return {temperatures, tempDates, tempMin, tempMax}
